@@ -14,10 +14,23 @@
               </div>
             @endif
 
-            Pictures
           </div>
         </div>
       </div>
+
+      <div class="col-md-8">
+        @foreach($pictures as $picture)
+        <div class="card">
+
+          <div class="card-body">
+
+            <img src="{{ asset('storage/' . $picture->filepath) }}">
+
+          </div>
+        </div>
+        @endforeach
+      </div>
+
     </div>
   </div>
 @endsection

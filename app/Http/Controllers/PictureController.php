@@ -9,7 +9,38 @@ class PictureController extends Controller
 {
     public function index()
     {
-        return view('pictures.index');
+        // ダミーデータ
+        $pictures = [
+            (object) [
+                'id' => 1,
+                'filepath' => '1/1.png',
+                'created_at' => now(),
+                'user' => (object) [
+                    'id' => 1,
+                    'name' => 'ユーザー名1',
+                ],
+            ],
+            (object) [
+                'id' => 2,
+                'filepath' => '1/2.png',
+                'created_at' => now(),
+                'user' => (object) [
+                    'id' => 1,
+                    'name' => 'ユーザー名1',
+                ],
+            ],
+            (object) [
+                'id' => 3,
+                'filepath' => '1/3.png',
+                'created_at' => now(),
+                'user' => (object) [
+                    'id' => 1,
+                    'name' => 'ユーザー名1',
+                ],
+            ],
+        ];
+
+        return view('pictures.index', ['pictures' => $pictures]);
     }
 
     /**
