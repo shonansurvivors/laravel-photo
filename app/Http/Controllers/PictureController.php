@@ -7,14 +7,9 @@ use Illuminate\Http\Request;
 
 class PictureController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return view('pictures.index');
     }
 
     /**
