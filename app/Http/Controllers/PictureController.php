@@ -9,36 +9,7 @@ class PictureController extends Controller
 {
     public function index()
     {
-        // ダミーデータ
-        $pictures = [
-            (object) [
-                'id' => 1,
-                'filepath' => '1/1.png',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 1,
-                    'name' => 'ユーザー名1',
-                ],
-            ],
-            (object) [
-                'id' => 2,
-                'filepath' => '1/2.png',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 1,
-                    'name' => 'ユーザー名1',
-                ],
-            ],
-            (object) [
-                'id' => 3,
-                'filepath' => '1/3.png',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 1,
-                    'name' => 'ユーザー名1',
-                ],
-            ],
-        ];
+        $pictures = Picture::all()->sortByDesc('created_at');
 
         return view('pictures.index', ['pictures' => $pictures]);
     }
@@ -50,7 +21,7 @@ class PictureController extends Controller
 
     public function store(PictureRequest $request, Picture $picture)
     {
-        $path = $request->file('picture')->store('public');
+        $path = $request->file('picture')->store('images', config('filesystems.default'));
         $picture->filepath = $path;
         $picture->user_id = 1;
         $picture->save();
