@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Picture;
-use Illuminate\Http\Request;
+use App\Http\Requests\PictureRequest;
 
 class PictureController extends Controller
 {
@@ -48,7 +48,7 @@ class PictureController extends Controller
         return view('pictures.create');
     }
 
-    public function store(Request $request)
+    public function store(PictureRequest $request)
     {
         $request->file('picture')->store('public');
 
