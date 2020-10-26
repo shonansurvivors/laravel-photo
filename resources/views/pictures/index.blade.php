@@ -2,11 +2,11 @@
 
 @section('content')
   <div class="container-fluid">
-    <div class="row justify-content-center">
+    <div class="row">
 
       <div class="card-deck">
         @foreach($pictures as $picture)
-          <div class="col-md-2">
+          <div class="col-sm-6 col-md-2">
             <div class="card">
 
               <div class="card-body">
