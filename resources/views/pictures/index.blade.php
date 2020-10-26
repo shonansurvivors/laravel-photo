@@ -9,10 +9,10 @@
           <div class="col-sm-6 col-md-2">
             <div class="card">
 
+              <img src="{{ asset('storage/' . $picture->filepath) }}" class="card-img-top">
+
               <div class="card-body">
-
-                <img src="{{ asset('storage/' . $picture->filepath) }}" class="card-img">
-
+                <h6 class="card-title">image</h6>
               </div>
             </div>
           </div>
