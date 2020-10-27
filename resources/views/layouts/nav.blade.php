@@ -35,13 +35,15 @@
               {{ Auth::user()->name }} <span class="caret"></span>
             </a>
 
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('logout') }}"
-                 onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <button class="dropdown-item" type="button"
+                      onclick="location.href=''">
+                お気に入り
+              </button>
+              <div class="dropdown-divider"></div>
+              <button form="logout-button" class="dropdown-item" type="submit">
                 {{ __('Logout') }}
-              </a>
-
+              </button>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
               </form>
