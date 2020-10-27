@@ -7,7 +7,7 @@
       <div class="card-deck">
         @foreach($pictures as $picture)
           <div class="col-sm-6 col-md-2">
-            <div class="card">
+            <div class="card mb-4">
 
               <img src="{{ asset('storage/' . $picture->filepath) }}" class="card-img-top">
 
