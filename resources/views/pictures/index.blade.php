@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
 
-      <div class="card-deck">
+      <div class="card-group">
         @foreach($pictures as $picture)
-          <div class="col-sm-6 col-md-2">
+          <div class="col-sm-6 col-md-3 col-lg-2">
             <div class="card mb-4">
 
               <img src="{{ asset('storage/' . $picture->filepath) }}" class="card-img photo-index">
