@@ -2,32 +2,20 @@
 
 @section('content')
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Dashboard</div>
+    <div class="row">
 
-          <div class="card-body">
-            @if (session('status'))
-              <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-              </div>
-            @endif
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-8">
+      <div class="card-group">
         @foreach($pictures as $picture)
-        <div class="card">
+          <div class="col-sm-6 col-md-3 col-lg-2">
+            <div class="card border-0 mb-4">
 
-          <div class="card-body">
+              <img src="{{ asset('storage/' . $picture->filepath) }}" class="card-img photo-index photo-rounded">
 
-            <img src="{{ asset('storage/' . $picture->filepath) }}">
-
+              <div class="card-body">
+                <h6 class="card-title">image</h6>
+              </div>
+            </div>
           </div>
-        </div>
         @endforeach
       </div>
 
