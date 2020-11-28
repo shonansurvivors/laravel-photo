@@ -8,12 +8,12 @@
           <div class="card-body pt-0">
             @include('error_card_list')
             <div class="card-text">
-              <form method="POST" action="{{ route('pictures.store') }}" enctype="multipart/form-data">
+              <form method="POST" action="{{ route('photos.store') }}" enctype="multipart/form-data">
 
                 @csrf
                 <div class="form-group">
                   <label></label>
-                  <input type="file" name="picture" class="form-control-file">
+                  <input type="file" name="photo" class="form-control-file">
                 </div>
 
                 <button type="submit" class="btn btn-primary">投稿する</button>

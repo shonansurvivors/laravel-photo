@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PictureRequest extends FormRequest
+class PhotoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class PictureRequest extends FormRequest
     public function rules()
     {
         return [
-            'picture' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'photo' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2048'
         ];
     }
 }
