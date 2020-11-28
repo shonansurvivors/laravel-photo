@@ -8,7 +8,7 @@
           <div class="card-body pt-0">
             @include('error_card_list')
             <div class="card-text">
-              <form method="POST" action="{{ route('pictures.store') }}" enctype="multipart/form-data">
+              <form method="POST" action="{{ route('photos.store') }}" enctype="multipart/form-data">
 
                 @csrf
                 <div class="form-group">

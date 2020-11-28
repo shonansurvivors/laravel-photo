@@ -11,12 +11,12 @@ class PhotoController extends Controller
     {
         $pictures = Picture::all()->sortByDesc('created_at');
 
-        return view('pictures.index', ['pictures' => $pictures]);
+        return view('photos.index', ['pictures' => $pictures]);
     }
 
     public function create()
     {
-        return view('pictures.create');
+        return view('photos.create');
     }
 
     public function store(PictureRequest $request, Picture $picture)
@@ -26,7 +26,7 @@ class PhotoController extends Controller
         $picture->user_id = 1;
         $picture->save();
 
-        return redirect()->route('pictures.index');
+        return redirect()->route('photos.index');
     }
 
     /**
