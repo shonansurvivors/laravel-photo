@@ -21,7 +21,7 @@ class PhotoController extends Controller
 
     public function store(PhotoRequest $request, Picture $picture)
     {
-        $path = $request->file('picture')->store('images', config('filesystems.default'));
+        $path = $request->file('photo')->store('images', config('filesystems.default'));
         $picture->filepath = $path;
         $picture->user_id = 1;
         $picture->save();
