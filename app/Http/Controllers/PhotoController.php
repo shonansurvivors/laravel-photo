@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Picture;
 use App\Http\Requests\PictureRequest;
 
-class PictureController extends Controller
+class PhotoController extends Controller
 {
     public function index()
     {
