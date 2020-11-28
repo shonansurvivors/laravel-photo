@@ -9,9 +9,9 @@ class PhotoController extends Controller
 {
     public function index()
     {
-        $pictures = Picture::all()->sortByDesc('created_at');
+        $photos = Picture::all()->sortByDesc('created_at');
 
-        return view('photos.index', ['pictures' => $pictures]);
+        return view('photos.index', ['photos' => $photos]);
     }
 
     public function create()

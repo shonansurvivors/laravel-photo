@@ -19,12 +19,12 @@
       </div>
 
       <div class="col-md-8">
-        @foreach($pictures as $picture)
+        @foreach($photos as $photo)
         <div class="card">
 
           <div class="card-body">
 
-            <img src="{{ asset('storage/' . $picture->filepath) }}">
+            <img src="{{ asset('storage/' . $photo->filepath) }}">
 
           </div>
         </div>
