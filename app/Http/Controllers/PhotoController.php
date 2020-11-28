@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Picture;
-use App\Http\Requests\PictureRequest;
+use App\Http\Requests\PhotoRequest;
 
 class PhotoController extends Controller
 {
@@ -19,7 +19,7 @@ class PhotoController extends Controller
         return view('photos.create');
     }
 
-    public function store(PictureRequest $request, Picture $picture)
+    public function store(PhotoRequest $request, Picture $picture)
     {
         $path = $request->file('picture')->store('images', config('filesystems.default'));
         $picture->filepath = $path;
