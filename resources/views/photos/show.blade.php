@@ -16,7 +16,7 @@
                   @method('PUT')
                   @csrf
                   <button type="submit" class="btn shadow-none">
-                    <i class="fas fa-heart bookmark-enable mr-1"></i>
+                    <i class="fas fa-heart {{ $photo->isBookmarkedBy(Auth::User()) ? 'bookmark-enable' : '' }} mr-1"></i>
                   </button>
                 </form>
               </div>

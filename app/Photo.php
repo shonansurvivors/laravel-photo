@@ -11,4 +11,11 @@ class Photo extends Model
     {
         return $this->belongsToMany('App\User', 'bookmarks')->withTimestamps();
     }
+
+    public function isBookmarkedBy(?User $user): bool
+    {
+        return $user
+            ? (bool)$this->bookmarks->where('id', $user->id)->count()
+            : false;
+    }
 }
