@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/photos', 'PhotoController');
 Route::put('photos/{photo}/bookmark', 'PhotoController@bookmark')->name('photos.bookmark')->middleware('auth');
+Route::delete('photos/{photo}/bookmark', 'PhotoController@unbookmark')->name('photos.bookmark')->middleware('auth');

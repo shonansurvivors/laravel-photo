@@ -77,4 +77,11 @@ class PhotoController extends Controller
 
         return redirect()->route('photos.show', ['photo' => $photo]);
     }
+
+    public function unbookmark(Request $request, Photo $photo)
+    {
+        $photo->bookmarks()->detach($request->user()->id);
+
+        return redirect()->route('photos.show', ['photo' => $photo]);
+    }
 }
