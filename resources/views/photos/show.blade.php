@@ -11,6 +11,15 @@
 
             <div class="card-body">
               <h6 class="card-title">image</h6>
+              <div class="card-text text-right">
+                <form method="POST" action="{{ route('photos.bookmark', ['photo' => $photo]) }}" >
+                  @method('PUT')
+                  @csrf
+                  <button type="submit" class="btn shadow-none">
+                    <i class="fas fa-heart bookmark-enable mr-1"></i>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
