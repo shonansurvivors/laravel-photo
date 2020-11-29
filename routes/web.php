@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/photos', 'PhotoController');
+Route::prefix('photos')->name('photos.bookmark')->middleware('auth')->group(function () {
+    Route::put('{photo}/bookmark', 'PhotoController@bookmark');
+    Route::delete('{photo}/bookmark', 'PhotoController@unbookmark');
+});

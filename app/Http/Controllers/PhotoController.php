@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Photo;
 use App\Http\Requests\PhotoRequest;
+use Illuminate\Http\Request;
 
 class PhotoController extends Controller
 {
@@ -66,5 +68,20 @@ class PhotoController extends Controller
     public function destroy(Photo $photo)
     {
         //
+    }
+
+    public function bookmark(Request $request, Photo $photo)
+    {
+        $photo->bookmarks()->detach($request->user()->id);
+        $photo->bookmarks()->attach($request->user()->id);
+
+        return redirect()->route('photos.show', ['photo' => $photo]);
+    }
+
+    public function unbookmark(Request $request, Photo $photo)
+    {
+        $photo->bookmarks()->detach($request->user()->id);
+
+        return redirect()->route('photos.show', ['photo' => $photo]);
     }
 }
