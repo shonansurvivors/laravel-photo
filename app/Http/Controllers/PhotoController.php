@@ -29,15 +29,9 @@ class PhotoController extends Controller
         return redirect()->route('photos.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Photo  $photo
-     * @return \Illuminate\Http\Response
-     */
     public function show(Photo $photo)
     {
-        //
+        return view('photos.show', ['photo' => $photo]);
     }
 
     /**
