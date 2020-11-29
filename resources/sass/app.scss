@@ -7,12 +7,22 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.photo-index {
-  width: 100%;
-  height: 256px;
-  object-fit: cover;
-}
-
 .photo-rounded {
   border-radius: 2rem;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    -moz-column-count: 6;
+    column-count: 6;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+  }
+
+  .card-columns .card {
+    display: inline-block;
+    width: 100%;
+  }
 }
