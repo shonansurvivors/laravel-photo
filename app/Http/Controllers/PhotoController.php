@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
 use App\Photo;
 use App\Http\Requests\PhotoRequest;
 use Illuminate\Http\Request;
