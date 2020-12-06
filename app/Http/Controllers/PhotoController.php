@@ -26,7 +26,7 @@ class PhotoController extends Controller
         // $path = $request->file('photo')->store('images', [config('filesystems.default'), 'ACL' => 'public-read']);
         $path = Storage::putFile('images', $request->file('photo'), 'public');
         $photo->filepath = $path;
-        $photo->user_id = 1;
+        $photo->user_id = $request->user()->id;
         $photo->save();
 
         return redirect()->route('photos.index');
