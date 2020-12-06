@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
 use App\Photo;
 use App\Http\Requests\PhotoRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
@@ -23,7 +23,8 @@ class PhotoController extends Controller
 
     public function store(PhotoRequest $request, Photo $photo)
     {
-        $path = $request->file('photo')->store('images', config('filesystems.default'));
+        // $path = $request->file('photo')->store('images', [config('filesystems.default'), 'ACL' => 'public-read']);
+        $path = Storage::putFile('images', $request->file('photo'), 'public');
         $photo->filepath = $path;
         $photo->user_id = 1;
         $photo->save();
