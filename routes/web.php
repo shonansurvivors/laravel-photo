@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/', 'PhotoController@index')->name('photos.index');
 Route::resource('/photos', 'PhotoController');
 Route::prefix('photos')->name('photos.bookmark')->middleware('auth')->group(function () {
     Route::put('{photo}/bookmark', 'PhotoController@bookmark');
