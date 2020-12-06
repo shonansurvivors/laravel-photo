@@ -12,8 +12,13 @@
 
                 @csrf
                 <div class="form-group">
-                  <label></label>
+                  <label>Photo</label>
                   <input type="file" name="photo" class="form-control-file">
+                </div>
+
+                <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" name="title" class="form-control" placeholder="写真のタイトル（必須ではありません）">
                 </div>
 
                 <button type="submit" class="btn btn-primary">投稿する</button>
