@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $photos = Photo::all()->sortByDesc('created_at');
+
+        if(isset($request->user_id)) {
+            $photos = $photos->where('user_id', $request->user_id);
+        }
 
         return view('photos.index', ['photos' => $photos]);
     }
