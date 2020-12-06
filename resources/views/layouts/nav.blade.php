@@ -36,7 +36,7 @@
             お気に入り
           </button>
           <div class="dropdown-divider"></div>
-          <button form="logout-button" class="dropdown-item" type="submit">
+          <button form="logout-form" class="dropdown-item" type="submit">
             {{ __('Logout') }}
           </button>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
