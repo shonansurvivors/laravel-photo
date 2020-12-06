@@ -7,7 +7,7 @@
         <div class="col-sm-12">
           <div class="card border-0">
 
-            <img src="{{ asset('storage/' . $photo->filepath) }}" class="card-img photo-rounded">
+            <img src="{{ Storage::url($photo->filepath) }}" class="card-img photo-rounded">
 
             <div class="card-body">
               <h6 class="card-title">image</h6>
