@@ -32,8 +32,8 @@
 
         <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <button class="dropdown-item" type="button"
-                  onclick="location.href=''">
-            お気に入り
+                  onclick="location.href='{{ route("photos.index", ["user_id" => Auth::id()]) }}'">
+            My Photos
           </button>
           <div class="dropdown-divider"></div>
           <button form="logout-form" class="dropdown-item" type="submit">
