@@ -10,7 +10,7 @@
             <img src="{{ Storage::url($photo->filepath) }}" class="card-img photo-rounded">
 
             <div class="card-body">
-              <h6 class="card-title">image</h6>
+              <h6 class="card-title">{{ $photo->title }}</h6>
               <div class="card-text text-right">
                 <form method="POST" action="{{ route('photos.bookmark', ['photo' => $photo]) }}" >
                   @if($photo->isBookmarkedBy(Auth::User()))

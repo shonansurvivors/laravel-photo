@@ -13,8 +13,9 @@
                 <img src="{{ Storage::url($photo->filepath) }}" class="card-img photo-rounded">
 
                 <div class="card-body">
-                  <h6 class="card-title">image</h6>
+                  <h6 class="card-title text-muted">{{ $photo->title }}</h6>
                 </div>
+
               </div>
             </a>
           </div>
